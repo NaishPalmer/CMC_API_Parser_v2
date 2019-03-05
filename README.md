@@ -9,4 +9,5 @@ Ripple(XRP)
 Chainlink(LINK)
 
 Uses the following hardware so far:
+
 #Audio Output Device
