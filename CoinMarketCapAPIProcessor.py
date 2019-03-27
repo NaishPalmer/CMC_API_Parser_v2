@@ -3,9 +3,9 @@ import datetime as dt
 import gtts
 from gtts import gTTS
 import os
+import touchphat
 
-
-
+touchphat.all_on()
 def fetch(price):
    language='en-us'
    myob=gTTS(text=(price + 'dollar'),lang=language,slow=False)
