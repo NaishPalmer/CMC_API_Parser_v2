@@ -4,8 +4,10 @@ import gtts
 from gtts import gTTS
 import os
 import touchphat
+import scrollphathd
+import time
 
-touchphat.all_on()
+
 def fetch(price):
    language='en-us'
    myob=gTTS(text=(price + 'dollar'),lang=language,slow=False)
@@ -35,8 +37,16 @@ def bitcoin_price():
    cryptocurrency_name = response['data']['BTC']['slug']
    fetch('The price of 1 Bitcoin is' + price_usd)
    play()
-
-
+   scrollphathd.write_string(price_usd, brightness=0.25)
+   length = scrollphathd.get_buffer_shape()[0] - 17
+   for x in range(length):
+        scrollphathd.show()
+        scrollphathd.scroll(1)
+        scrollphathd.sleep(0.03)
+   time.sleep(1.5)
+   scrollphathd.clear()
+   scrollphathd.show()
+   
 
 def ethereum_price():
    url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=ETH&convert=USD'
@@ -91,8 +101,19 @@ def chainlink_price():
 
 @touchphat.on_touch(['A'])
 def run_bitcoin_price():
+   touchphat.led_on(2)
    bitcoin_price()
+   
 
+@touchphat.on_touch(['B'])
+def run_ethereum_price():
+   ethereum_price()
 
+@touchphat.on_touch(['C'])
+def run_ripple_price():
+   ripple_price()   
 
+@touchphat.on_touch(['D'])
+def run_chainlink_price():
+   chainlink_price()
 
