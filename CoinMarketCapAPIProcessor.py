@@ -25,7 +25,7 @@ def bitcoin_price():
    headers = {
     'Accept': 'application/json',
     'Accept-Encoding': 'deflate, gzip',
-    'X-CMC_PRO_API_KEY': 'YOUR-API-KEY-HERE',
+    'X-CMC_PRO_API_KEY': 'd49c4a54-e879-4f24-8a73-af853d3d444f',
    }
    r = requests.get(url, headers=headers)
    if r.status_code == 200:
@@ -88,5 +88,11 @@ def chainlink_price():
    cryptocurrency_name = response['data']['LINK']['slug']
    fetch('The price of 1 LINK Token is' + price_usd)
    play()
+
+@touchphat.on_touch(['A'])
+def run_bitcoin_price():
+   bitcoin_price()
+
+
 
 
