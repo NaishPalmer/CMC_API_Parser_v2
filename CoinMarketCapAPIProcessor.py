@@ -42,7 +42,7 @@ def bitcoin_price():
    for x in range(length):
         scrollphathd.show()
         scrollphathd.scroll(1)
-        scrollphathd.sleep(0.03)
+        time.sleep(0.03)
    time.sleep(1.5)
    scrollphathd.clear()
    scrollphathd.show()
