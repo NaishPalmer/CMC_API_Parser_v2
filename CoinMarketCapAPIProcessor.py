@@ -37,12 +37,12 @@ def bitcoin_price():
    cryptocurrency_name = response['data']['BTC']['slug']
    fetch('The price of 1 Bitcoin is' + price_usd)
    play()
-   scrollphathd.write_string('The price of bitcoin is: ' + price_usd, brightness=0.25)
+   scrollphathd.write_string('The price of bitcoin is: ' + price_usd + 'USD', brightness=0.25)
    length = scrollphathd.get_buffer_shape()[0] - 17
    for x in range(length):
         scrollphathd.show()
         scrollphathd.scroll(1)
-        time.sleep(0.07)
+        time.sleep(0.04)
    time.sleep(1.5)
    scrollphathd.clear()
    scrollphathd.show()
@@ -63,6 +63,15 @@ def ethereum_price():
    cryptocurrency_name = response['data']['ETH']['slug']
    fetch('The price of 1 Ethereum is' + price_usd)
    play()
+   scrollphathd.write_string('The price of ethereum is: ' + price_usd + 'USD', brightness=0.25)
+   length = scrollphathd.get_buffer_shape()[0] - 17
+   for x in range(length):
+        scrollphathd.show()
+        scrollphathd.scroll(1)
+        time.sleep(0.04)
+   time.sleep(1.5)
+   scrollphathd.clear()
+   scrollphathd.show()
    
 
 def ripple_price():
@@ -80,6 +89,15 @@ def ripple_price():
    cryptocurrency_name = response['data']['XRP']['slug']
    fetch('The price of 1 Ripple is' + price_usd)
    play()
+   scrollphathd.write_string('The price of ripple is: ' + price_usd + 'USD', brightness=0.25)
+   length = scrollphathd.get_buffer_shape()[0] - 17
+   for x in range(length):
+        scrollphathd.show()
+        scrollphathd.scroll(1)
+        time.sleep(0.04)
+   time.sleep(1.5)
+   scrollphathd.clear()
+   scrollphathd.show()
  
    
 
@@ -98,6 +116,15 @@ def chainlink_price():
    cryptocurrency_name = response['data']['LINK']['slug']
    fetch('The price of 1 LINK Token is' + price_usd)
    play()
+   scrollphathd.write_string('The price of chainlink is: ' + price_usd + 'USD', brightness=0.25)
+   length = scrollphathd.get_buffer_shape()[0] - 17
+   for x in range(length):
+        scrollphathd.show()
+        scrollphathd.scroll(1)
+        time.sleep(0.04)
+   time.sleep(1.5)
+   scrollphathd.clear()
+   scrollphathd.show()
 
 @touchphat.on_touch(['A'])
 def run_bitcoin_price():
